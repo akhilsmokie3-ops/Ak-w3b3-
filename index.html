@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multi Timezone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold'>🕐</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>⏱️ Global Time Clock</h1>
+            <p class="subtitle">Real-time view across the world</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="themeToggle" class="btn btn-theme" title="Toggle Dark/Light Mode (T)">
+                🌙
+            </button>
+            <button id="formatToggle" class="btn btn-format" title="Toggle 12/24 Hour Format (F)">
+                12h
+            </button>
+            <button id="soundToggle" class="btn btn-sound" title="Toggle Sound Notifications (S)">
+                🔔
+            </button>
+            <button id="resetBtn" class="btn btn-reset" title="Reset to Default Settings (R)">
+                ↻ Reset
+            </button>
+        </div>
+
+        <!-- Add Custom Timezone -->
+        <div class="add-timezone">
+            <input type="text" id="timezoneInput" placeholder="Add custom timezone (e.g., Asia/Bangkok)" class="timezone-input">
+            <button id="addBtn" class="btn btn-add">+ Add</button>
+            <div id="timezoneList" class="timezone-suggestions"></div>
+        </div>
+
+        <!-- Main Clock Display -->
+        <div class="clocks-grid" id="clocksGrid">
+            <!-- Clocks will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Current Time Info -->
+        <div class="current-time-info">
+            <div class="info-card">
+                <h3>Local Time</h3>
+                <p id="localTime" class="time-display">--:--:--</p>
+                <p id="localTimezone" class="timezone-name">Loading...</p>
+            </div>
+            <div class="info-card">
+                <h3>UTC Time</h3>
+                <p id="utcTime" class="time-display">--:--:--</p>
+                <p class="timezone-name">Coordinated Universal Time</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Last Updated: <span id="lastUpdate">--:--:--</span></p>
+            <p>🌍 Local timezone: <span id="localTz">Loading...</span></p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
